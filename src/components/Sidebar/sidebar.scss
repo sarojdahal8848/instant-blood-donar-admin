@@ -1,0 +1,54 @@
+.sidebar{
+    flex: 2;
+    height: 100vh;
+    border-right: 1px solid grey;
+    background-color: black;
+    position: sticky;
+    overflow-y: scroll;
+    hr{
+        height: 1px;
+        background-color: grey;
+        border: none;
+    }
+    &__logoContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+        color: grey;
+        padding: 1rem 0;
+        cursor: pointer;
+        h3{
+            font-size: 1rem;
+        }
+        img{
+            width: 2rem;
+        }
+    }
+    &__nav{
+        margin-top: 0.5rem;
+        ul{
+            margin: 0 0.5rem;
+            padding: 0;
+            li{
+                color: white;
+                padding: 0.5rem 1rem;
+                display: flex;
+                gap: 0.5rem;
+                cursor: pointer;
+                font-weight: bold;
+            
+                &:hover{
+                    background-color: white;
+                    color: black;
+                    .icon{
+                        color: red;
+                    }
+                }
+                .icon{
+                    color: white;
+                }
+            }
+        }
+    }
+}

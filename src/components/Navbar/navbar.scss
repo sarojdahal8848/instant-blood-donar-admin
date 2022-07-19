@@ -1,0 +1,33 @@
+.navbar{
+    background-color: white;
+    height: 4rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-end;
+    &__icons{
+        width: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .icon-container{
+            position: relative;
+            .icon{
+                color: grey;
+                font-size: 1.9rem;
+            }
+            span{
+                background-color: red;
+                color: white;
+                border-radius: 100%;
+                width: 17px;
+                height: 17px;
+                top: 0;
+                right: 0;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
