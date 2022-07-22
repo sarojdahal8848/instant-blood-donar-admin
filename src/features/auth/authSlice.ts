@@ -5,35 +5,47 @@ interface LoginData {
   password: string;
 }
 
-const login = createAsyncThunk("auth/login", async (data: LoginData) => {
+export const login = createAsyncThunk("auth/login", async (data: LoginData) => {
   const response = await fetch("http://localhost:5001/auth/login", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
     body: JSON.stringify(data),
   });
-  return response.json();
+  return await response.json();
 });
 
 interface LoginState {
-  entities: [];
-  loading: "idle" | "pending" | "succeeded" | "failed";
+  entity: {};
+  loading: boolean;
+  error: string | null;
 }
 
 const initialState = {
-  entities: [],
-  loading: "idle",
+  entity: {},
+  loading: false,
+  error: null,
 } as LoginState;
 
-const loginSlice = createSlice({
-  name: "users",
+export const loginSlice = createSlice({
+  name: "auth",
   initialState,
-  reducers: {
-    // standard reducer logic, with auto-generated action types per reducer
-  },
+  reducers: {},
   extraReducers: (builder) => {
-    // Add reducers for additional action types here, and handle loading state as needed
+    builder.addCase(login.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    });
     builder.addCase(login.fulfilled, (state, action) => {
-      // Add user to the state array
-      state.entities.push(action.payload);
+      state.entity = { ...action.payload };
+      state.loading = false;
+      state.error = null;
+    });
+    builder.addCase(login.rejected, (state, { payload }) => {
+      if (payload) state.error = payload as string;
+      state.loading = false;
     });
   },
 });

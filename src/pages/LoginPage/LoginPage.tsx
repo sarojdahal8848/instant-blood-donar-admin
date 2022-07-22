@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
@@ -6,9 +7,13 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+import { useAppDispatch } from "../../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 import "./loginpage.scss";
-import { useState } from "react";
-
+import { login } from "../../features/auth";
+import { Loader } from "../../components";
+import { toast } from "react-toastify";
+import { toastify } from "../../utils";
 interface UserInput {
   username: string;
   password: string;
@@ -16,12 +21,14 @@ interface UserInput {
 
 const userSchema = yup.object({
   username: yup.string().required(),
-  password: yup.string().min(6).max(32).required(),
+  password: yup.string().min(5).max(32).required(),
 });
 
 const LoginPage = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const { entity, loading, error } = useAppSelector((state) => state.login);
 
   const {
     register,
@@ -37,9 +44,11 @@ const LoginPage = () => {
   };
 
   const onSubmit: SubmitHandler<UserInput> = (data) => {
-    console.log(data);
-    reset();
+    dispatch(login(data));
+    // reset();
   };
+
+  if (loading) return <Loader />;
 
   return (
     <div className="loginpage">
