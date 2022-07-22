@@ -6,6 +6,10 @@ import "./navbar.scss";
 const Navbar = () => {
   return (
     <div className="navbar">
+      <div className="navbar__logoContainer">
+        <img src="logo.jpg" alt="logo" />
+        <h3>Instant Blood Donar</h3>
+      </div>
       <div className="navbar__icons">
         <div className="icon-container">
           <EmailIcon className="icon" />

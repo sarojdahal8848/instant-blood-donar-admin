@@ -1,9 +1,24 @@
 .navbar{
     background-color: white;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0 0.5rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    &__logoContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+        color: grey;
+        padding: 1rem 0;
+        cursor: pointer;
+        h3{
+            font-size: 1rem;
+        }
+        img{
+            width: 4rem;
+        }
+    }
     &__icons{
         width: 10%;
         display: flex;

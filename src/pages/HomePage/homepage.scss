@@ -1,0 +1,16 @@
+.homepage{
+    padding: 1rem 0.5rem;
+    &__widget{
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+    &__chart{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+}

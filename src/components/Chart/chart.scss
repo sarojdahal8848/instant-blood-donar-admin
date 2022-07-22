@@ -1,0 +1,16 @@
+.chart{
+    border: 1px solid grey;
+    border-radius: 3px;
+    flex: 1;
+    text-align: center;
+    background-color: white;
+    &__title{
+        color: grey;
+        padding: 0.5rem 0;
+    }
+    .recharts-wrapper{
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+}

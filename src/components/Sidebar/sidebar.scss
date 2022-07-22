@@ -5,25 +5,11 @@
     background-color: black;
     position: sticky;
     overflow-y: scroll;
+    top: 0;
     hr{
         height: 1px;
         background-color: grey;
         border: none;
-    }
-    &__logoContainer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.3rem;
-        color: grey;
-        padding: 1rem 0;
-        cursor: pointer;
-        h3{
-            font-size: 1rem;
-        }
-        img{
-            width: 2rem;
-        }
     }
     &__nav{
         margin-top: 0.5rem;

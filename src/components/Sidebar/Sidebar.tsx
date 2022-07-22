@@ -10,10 +10,6 @@ import "./sidebar.scss";
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <div className="sidebar__logoContainer">
-        <img src="logo.jpg" alt="logo" />
-        <h3>Instant Blood Donar</h3>
-      </div>
       <hr />
       <div className="sidebar__nav">
         <ul>
@@ -55,7 +51,7 @@ const Sidebar = () => {
           </li>
           <li>
             <span>
-              <EventIcon className="icon" />
+              <SettingsIcon className="icon" />
             </span>
             Setting
           </li>

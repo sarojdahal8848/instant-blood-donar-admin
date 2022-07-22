@@ -1,12 +1,12 @@
 import { toast } from "react-toastify";
 
 interface Toastify {
-  message: string;
-  type: "success" | "error";
+  error?: string;
+  msg: "success" | "error";
 }
-export const toastify = ({ message, type }: Toastify) => {
-  if (type === "success") {
-    return toast.success(message);
+export const toastify = (data: Toastify) => {
+  if (data.msg === "success") {
+    return toast.success("success");
   }
-  return toast.error(message);
+  return toast.error(data.error);
 };

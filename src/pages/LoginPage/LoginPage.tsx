@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
@@ -12,8 +12,7 @@ import { useAppSelector } from "../../app/hooks";
 import "./loginpage.scss";
 import { login } from "../../features/auth";
 import { Loader } from "../../components";
-import { toast } from "react-toastify";
-import { toastify } from "../../utils";
+
 interface UserInput {
   username: string;
   password: string;
@@ -28,7 +27,15 @@ const LoginPage = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const { entity, loading, error } = useAppSelector((state) => state.login);
+  const { entity, loading, error, authenticated } = useAppSelector(
+    (state) => state.login
+  );
+
+  useEffect(() => {
+    if (authenticated) {
+      navigate("/");
+    }
+  }, [authenticated]);
 
   const {
     register,
