@@ -5,3 +5,4 @@ export * from "./Loader";
 export * from "./ProtectedRoute";
 export * from "./WidgetCard";
 export * from "./Chart";
+export * from "./CustomImage";

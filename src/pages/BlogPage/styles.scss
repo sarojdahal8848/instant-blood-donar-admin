@@ -1,0 +1,19 @@
+.listblog{
+    padding: 2rem 1rem;
+    &__header{
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .createbutton{
+            padding: 0.5rem 1rem;
+            background-color: rgb(71, 71, 202);
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        &__table{
+            width: 90%;
+        }
+    }
+}
