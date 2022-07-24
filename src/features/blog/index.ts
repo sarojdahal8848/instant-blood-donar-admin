@@ -1,1 +1,1 @@
-export * from "./getAllBlogSlice";
+export * from "./blogSlice";

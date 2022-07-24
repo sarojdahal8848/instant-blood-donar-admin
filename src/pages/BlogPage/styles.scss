@@ -11,9 +11,92 @@
             color: white;
             font-weight: bold;
             border-radius: 4px;
+            text-decoration: none;
         }
-        &__table{
-            width: 90%;
+        
+    }
+}
+
+.createblog{
+    padding: 2rem 1rem;
+    &__header{
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .listbutton{
+            padding: 0.5rem 1rem;
+            background-color: rgb(71, 71, 202);
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+    }
+    &__form{
+        background-color: white;
+        padding: 0.5rem 2rem;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // flex-direction: column;
+        form{
+            // max-width: 50rem;
+            .form-group{
+                margin-top: 1rem;
+                label{
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+                div{
+                    margin-top: 10px;
+                    display: flex;
+                    gap: 1rem;
+                    border: 2px solid rgb(180, 180, 180);
+                    padding: 0.5rem 0.5rem;
+                    border-radius: 5px;
+                    input,textarea{
+                        outline: none;
+                        border: none;
+                        background: transparent;
+                        &:focus{
+                            outline: none;
+                            background: none;
+                        }
+                        
+                    }
+                    .icon{
+                        color:grey;
+                        font-size: 1rem;
+                    }
+                }
+                .error-message{
+                    color: red;
+                    font-size: 12px;
+                    margin: 5px 5px;
+                }
+            }
+    
+            .forget-password{
+                font-size: 0.8rem;
+                color: blue;
+                font-weight: bold;
+                align-self: flex-end;
+                margin: 1rem 0;
+                cursor: pointer;
+            }
+            button{
+                background-color: rgb(28, 28, 243);
+                color: white;
+                border: none;
+                border-radius: 1rem;
+                padding: 0.6rem 2rem;
+                cursor: pointer;
+                font-weight: bold;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
         }
     }
 }

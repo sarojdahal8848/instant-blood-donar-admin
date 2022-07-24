@@ -9,17 +9,18 @@ import Paper from "@mui/material/Paper";
 import "./styles.scss";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { useEffect } from "react";
-import { getAllBlog } from "../../features/blog";
 import { CustomImage, Loader } from "../../components";
 import { dateFormat } from "../../utils";
+import { Link } from "react-router-dom";
+import { getAllBlog } from "../../features/blog";
 
 export default function ListBlogPage() {
   const dispatch = useAppDispatch();
-  const { entity, loading, error } = useAppSelector(
-    (state) => state.getAllBlog
+  const { blogs, loading, error } = useAppSelector(
+    (state) => state.blogReducer
   );
 
-  const { data } = entity;
+  const { data } = blogs;
 
   useEffect(() => {
     dispatch(getAllBlog());
@@ -30,17 +31,27 @@ export default function ListBlogPage() {
     <div className="listblog">
       <div className="listblog__header">
         <h2>Blog List</h2>
-        <a className="createbutton">Create</a>
+        <Link className="createbutton" to="/blog/create">
+          Create
+        </Link>
       </div>
       <div className="listblog__table">
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell align="center">Image</TableCell>
-                <TableCell align="center">Title</TableCell>
-                <TableCell align="center">Status</TableCell>
-                <TableCell align="center">Created At</TableCell>
+                <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  Image
+                </TableCell>
+                <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  Title
+                </TableCell>
+                <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  Status
+                </TableCell>
+                <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  Created At
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

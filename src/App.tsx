@@ -1,5 +1,5 @@
 import { Layout, ProtectedRoute } from "./components";
-import { HomePage, ListBlogPage, LoginPage } from "./pages";
+import { CreateBlogPage, HomePage, ListBlogPage, LoginPage } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useAuth } from "./utils";
 
@@ -33,6 +33,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Layout component={<ListBlogPage />} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/blog/create"
+          element={
+            <ProtectedRoute>
+              <Layout component={<CreateBlogPage />} />
             </ProtectedRoute>
           }
         />

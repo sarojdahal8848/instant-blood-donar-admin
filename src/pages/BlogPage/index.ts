@@ -1,2 +1,2 @@
-export * from "./CreateBlog";
+export * from "./CreateBlogPage";
 export * from "./ListBlogPage";

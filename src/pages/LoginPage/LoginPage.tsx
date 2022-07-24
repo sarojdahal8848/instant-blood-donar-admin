@@ -28,7 +28,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const { entity, loading, error, authenticated } = useAppSelector(
-    (state) => state.login
+    (state) => state.loginReducer
   );
 
   useEffect(() => {
