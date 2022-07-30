@@ -1,7 +1,12 @@
 .layout{
     display: flex;
+    width: 100%;
+    flex-wrap: wrap;
     background-color: rgb(227, 225, 238);
-    .nav-container{
-        flex: 10;
+    &__sidebar{
+        flex: 1;
+    }
+    &__main{
+        flex: 6;
     }
 }

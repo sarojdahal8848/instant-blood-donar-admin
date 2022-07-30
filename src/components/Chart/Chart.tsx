@@ -28,7 +28,6 @@ interface ChartProp {
 }
 
 const Chart = ({ data, title }: ChartProp) => {
-  console.log(data);
   return (
     <div className="chart">
       <div className="chart__title">{title}</div>
@@ -36,7 +35,7 @@ const Chart = ({ data, title }: ChartProp) => {
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         {Object.keys(data[0]).map((key) => {
-          return <Bar dataKey={key} fill="#ec0d0d" />;
+          return <Bar key={key} dataKey={key} fill="#ec0d0d" />;
         })}
       </BarChart>
     </div>
